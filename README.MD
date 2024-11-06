@@ -1,7 +1,7 @@
 
 # BIBLIOTECA
 
-Segunda preentrega - Curso SQL. 
+Proyecto Final - Curso SQL. 
 
 ### Descripción del proyecto
 Esta biblioteca enfrenta ineficiencias tanto en la gestión del inventario como en el control de usuarios, préstamos y sanciones, lo que afecta negativamente tanto la operación interna como la experiencia del usuario. Estos problemas limitan la capacidad de la biblioteca para ofrecer un servicio ágil, confiable y personalizado a sus usuarios, lo que justifica la implementación de un sistema automatizado basado en una base de datos para optimizar todos estos aspectos.
