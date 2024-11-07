@@ -62,10 +62,10 @@ CREATE TABLE BOOK (
     Book_ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Title VARCHAR(200) NOT NULL,
     Year YEAR,
-    Amount_of_copies INT NOT NULL,
+    Amount_of_copies INT NOT NULL DEFAULT 1,
     Category_ID INT NOT NULL,
     Editory_ID INT NOT NULL,
-    Shelf_ID INT NOT NULL,
+    Shelf_ID INT NOT NULL DEFAULT 1,
     Available BOOLEAN DEFAULT TRUE
 );
 

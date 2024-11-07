@@ -13,6 +13,8 @@ DROP FUNCTION IF EXISTS fn_GetPopularBooks;
 DELIMITER //
 
 -- Function: fn_GetUserLoanCount
+-- Objetivo: Devuelve el número de libros que un usuario ha prestado,
+-- Ejemplo: SELECT fn_GetUserLoanCount(1);
 CREATE FUNCTION fn_GetUserLoanCount(userID INT)
 RETURNS INT
 DETERMINISTIC
@@ -31,6 +33,7 @@ DELIMITER //
 
 -- Function: fn_IsBookAvailable
 -- Objetivo: Devuelve un valor booleano indicando si un libro específico está disponible para préstamo.
+-- Ejemplo: SELECT fn_IsBookAvailable(4);
 CREATE FUNCTION fn_IsBookAvailable(bookID INT)
 RETURNS TINYINT(1)  -- Cambiado BOOLEAN a TINYINT(1)
 DETERMINISTIC
@@ -49,6 +52,7 @@ DELIMITER //
 
 -- Function: fn_GetLateFees
 -- Objetivo: Calcula y devuelve las tarifas por atraso para un préstamo específico.
+-- Ejemplo: SELECT fn_GetLateFees(2)
 CREATE FUNCTION fn_GetLateFees(loanID INT)
 RETURNS DECIMAL(10,2)
 DETERMINISTIC
@@ -78,6 +82,7 @@ DELIMITER ;
 DELIMITER //
 -- Function: fn_GetTotalBooksInCategory
 -- Objetivo: Devuelve el total de libros en una categoría específica.
+-- Ejemplo: SELECT fn_GetTotalBooksInCategory(3)
 CREATE FUNCTION fn_GetTotalBooksInCategory(categoryID INT)
 RETURNS INT
 DETERMINISTIC
@@ -95,6 +100,7 @@ DELIMITER ;
 DELIMITER //
 -- Function: fn_GetPopularBooks
 -- Objetivo: Devuelve los libros más prestados hasta la fecha, limitados a un número específico de resultados.
+-- Ejemplo: SELECT fn_GetPopularBooks(5, 1);
 CREATE FUNCTION fn_GetPopularBooks(categoryID INT, limitCount INT)
 RETURNS VARCHAR(255)
 DETERMINISTIC
@@ -102,7 +108,7 @@ READS SQL DATA
 BEGIN
     DECLARE bookIDs VARCHAR(255) DEFAULT '';
     
-    SELECT GROUP_CONCAT(Book_ID ORDER BY COUNT(Loan_ID) DESC SEPARATOR ', ')
+    SELECT GROUP_CONCAT(BOOK.Book_ID ORDER BY COUNT(LOAN.Loan_ID) DESC SEPARATOR ', ')
     INTO bookIDs
     FROM LOAN
     JOIN BOOK ON LOAN.Book_ID = BOOK.Book_ID
@@ -113,5 +119,3 @@ BEGIN
     RETURN bookIDs;
 END//
 DELIMITER ; 
-
-

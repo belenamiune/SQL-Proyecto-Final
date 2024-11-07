@@ -8,10 +8,14 @@ Esta biblioteca enfrenta ineficiencias tanto en la gestión del inventario como 
 
 Por lo tanto este proyecto consta de la creación de una base de datos para una biblioteca pública con el objetivo de modernizar su operación, mejorar la eficiencia, optimizar el uso de los recursos y brindar un mejor servicio a los usuarios. Además, facilita la toma de decisiones informadas sobre la colección de libros y las necesidades de los usuarios, y contribuye a la organización y gestión general de la biblioteca.
 
+### Modelo de negocio
+El modelo de negocio de la biblioteca pública se centra en la mejora de la eficiencia operativa, la satisfacción del usuario y la sostenibilidad financiera a través de la automatización de procesos y el uso de datos. Al integrar estos elementos, la biblioteca puede ofrecer un servicio más ágil y accesible, al tiempo que optimiza sus recursos y genera oportunidades de ingresos adicionales para garantizar su funcionamiento a largo plazo.
+
 ### Base de datos
+###### Objetivo
+En referencia a lo mencionado anteriormente, esta base de datos se creará para poder agilizar algunos de sus procesos, lograr una mejor organización y mejorar la experiencia de usuario. 
 
-En referencia a lo mencionado anteriormente, esta base de datos se creará para poder agilizar algunos de sus procesos, lograr una mejor organización y mejorar la experiencia de usuario. Se realizó una breve actualización con respecto a la primera preentrega agregando la tabla USERTYPES
-
+###### Tablas
 A continuación se detallan cada una de las tablas: 
 
     1. User
@@ -29,7 +33,7 @@ A continuación se detallan cada una de las tablas:
             User_Type (PK)
             User_Type_Name
             Description
-    2. Book
+    3. Book
         Objetivo: almacenar información de cada uno de los libros disponibles.
         Atributos: 
             Book_ID (PK)
@@ -39,7 +43,7 @@ A continuación se detallan cada una de las tablas:
             Cateogry_ID (FK)
             Editory_ID(FK)
             Shelf_ID (FK)
-    3. Loan
+    4. Loan
         Objetivo: almacenar información sobre los prestamos realizados.
         Atributos:
             Loan_ID (PK)
@@ -48,20 +52,20 @@ A continuación se detallan cada una de las tablas:
             Status
             User_ID (FK)
             Librarian_ID (FK)
-    4. Librarian
+    5. Librarian
         Objetivo: almacenar información de los trabajadores. 
         Atributos: 
             Librarian_ID (PK)
             Librarian_Name
             Shift
-    5. Reservation
+    6. Reservation
         Objetivo: almacenar información sobre las reservas de los libros.
         Atributos: 
             Reservation_ID (PK)
             Reservation_Date
             Reservation_Status
             User_ID (FK)
-    6. Sanction
+    7. Sanction
         Objetivo: almacenar información sobre las saciones aplicadas.
         Atributos: 
             Sanction_ID (PK)
@@ -71,30 +75,30 @@ A continuación se detallan cada una de las tablas:
             Sanction_Status
             User_ID (FK)
             Loan_ID (FK)
-    7. Fine
+    8. Fine
         Objetivo: almacenar información sobre las multas aplicadas.
         Atributos:
             Fine_ID (PK)
             Price
             Description
             Penalty_ID (FK)
-    8. Category
+    9. Category
         Objetivo: almacenar información sobre las categorías de libros disponibles.
         Atributos:
             Cateogry_ID (PK)
             Category_Name
             Description
-    9. Editory
+    10. Editory
         Objetivo: almacenar información sobre las editoriales disponibles.
         Atributos:
             Editory_ID (PK)
             Editory_Name 
-    10. Autor 
+    11. Author 
         Objetivo: almacenar información sobre los autores.
         Atributos: 
             Autor_ID (PK)
             Autor_Name
-    11. Shelf
+    12. Shelf
         Objetivo: almacenar información sobre los estantes.
         Atributos:
             Shelf_ID (PK)
@@ -106,7 +110,7 @@ A continuación se detallan cada una de las tablas:
 
 #### Population
 
-Este archivo, llamado "population," contiene un script SQL que inserta datos en varias tablas de la base de datos "Library". La razón de crear este archivo es para poblar la base de datos con datos iniciales y de prueba, lo cual es esencial para validar que la estructura de la base de datos y las relaciones entre las tablas funcionan correctamente.
+Este archivo, llamado "population", contiene un script SQL que inserta datos en varias tablas de la base de datos "Library". La razón de crear este archivo es para poblar la base de datos con datos iniciales y de prueba, lo cual es esencial para validar que la estructura de la base de datos y las relaciones entre las tablas funcionan correctamente.
 
 
 #### Views
@@ -201,6 +205,23 @@ El archivo contiene funciones que encapsulan lógica de negocio en la base de da
     5. GetPopularBooks:
         Objetivo: Obtener los libros más prestados, utilizando un parámetro para limitar la cantidad de resultados.
         Razón: Este procedimiento permite obtener información sobre la popularidad de los libros de manera eficiente, facilitando el análisis de datos y ayudando en la toma de decisiones sobre adquisiciones o promociones en la biblioteca.
+
+
+#### Backup
+El archivo "library_backup" se generó para asegurar la protección de los datos, la continuidad de los servicios, la recuperación rápida ante fallos o desastres, y el cumplimiento de normativas. Además, es una práctica crítica para mantener la confianza de los usuarios y para garantizar que la biblioteca pueda operar de manera eficiente y segura a largo plazo.
+
+#### Informes
+El archivo "library_report", ubicado dentro de la carpeta "reports", presenta en formato .csv una serie de informes generados en base a la información almacenada en las tablas de Library, con el objetivo de ser utilizado para  mejorar la eficiencia operativa, tomar decisiones informadas, optimizar el uso de recursos, garantizar el cumplimiento de normativas, y ofrecer un mejor servicio a los usuarios. 
+También se encuentran por separado en formato .csv, dentro de la misma carpeta, los informes por separado.
+
+
+### Herramientas utilizadas
+* MySQL Workbench
+* Google Drive
+* Canva
+* Archivos PDF
+* Excel
+
 
 ### Diagrama ER 
 ![EER Biblioteca Pública](library_EER_diagram.png)

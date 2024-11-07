@@ -1,0 +1,9 @@
+User,Address,Book,Loan_Date,Return_Date,Librarian,Sanction_Date,Sanction_Status
+"Ana Gómez","Avenida Siempre Viva 742","To Kill a Mockingbird",2024-01-12,2024-01-19,"Jorge López",NULL,NULL
+"Carlos Ruiz","Calle del Mar 654",Educated,2024-01-20,2024-01-27,"Jorge López",NULL,NULL
+"Juan Pérez","Calle Falsa 123","The Great Gatsby",2024-01-10,2024-01-17,"Clara Martínez",2024-01-15,Pending
+"Laura Jiménez","Avenida de la Paz 135","The Diary of a Young Girl",2024-01-28,NULL,"Jorge López",NULL,NULL
+"Luis Martínez","Boulevard de los Sueños 456",1984,2024-01-15,NULL,"Elena García",2024-01-20,Paid
+"Marta López","Calle del Sol 321","Sapiens: A Brief History of Humankind",2024-01-16,NULL,"Clara Martínez",NULL,NULL
+"Pedro Sánchez","Calle de la Esperanza 258","The Immortal Life of Henrietta Lacks",2024-01-25,2024-02-01,"Clara Martínez",NULL,NULL
+"Sofía Torres","Calle de la Luna 987","A Brief History of Time",2024-01-22,NULL,"Elena García",NULL,NULL

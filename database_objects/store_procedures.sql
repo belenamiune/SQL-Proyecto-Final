@@ -17,6 +17,7 @@ DELIMITER //
 
 -- Stored Procedure: sp_AddNewBook
 -- Objetivo: Agregar un nuevo libro a la base de datos, asegurando que se proporciona toda la información necesaria.
+CALL sp_AddNewBook('Nuevo Libro', 1, 2, 1);
 CREATE PROCEDURE sp_AddNewBook(
     IN bookTitle VARCHAR(255),
     IN categoryID INT,
@@ -35,6 +36,7 @@ DELIMITER //
 
 -- Stored Procedure: sp_LoanBook
 -- Objetivo: Procesar un nuevo préstamo de libro, verificando la disponibilidad y registrando la fecha de préstamo.
+-- Ejemplo: CALL sp_LoanBook(2,2);
 CREATE PROCEDURE sp_LoanBook(
     IN userID INT,
     IN bookID INT
@@ -64,6 +66,7 @@ DELIMITER //
 
 -- Stored Procedure: sp_ReturnBook
 -- Objetivo: Procesar la devolución de un libro, actualizando la fecha de devolución en la tabla de préstamos.
+-- Ejemplo: CALL sp_ReturnBook(5);
 CREATE PROCEDURE sp_ReturnBook(
  IN loanID INT
 )
@@ -92,6 +95,7 @@ DELIMITER ;
 DELIMITER //
 -- Stored Procedure: sp_GetUserLoans
 -- Objetivo: Obtener todos los préstamos de un usuario específico, devolviendo resultados en un conjunto de resultados.
+-- Ejemplo: CALL sp_GetUserLoans(2);
 CREATE PROCEDURE sp_GetUserLoans(
     IN userID INT
 )
@@ -117,6 +121,7 @@ DELIMITER ;
 
 -- Stored Procedure: sp_GetPopularBooks
 -- Objetivo: Obtener los libros más prestados, utilizando un parámetro para limitar la cantidad de resultados.
+-- Ejemplo: CALL sp_GetPopularBooks(2);
 DELIMITER //
 
 CREATE PROCEDURE sp_GetPopularBooks(

@@ -1,0 +1,5 @@
+User,Book,Loan_Date,Sanction_Date,Sanction_Status
+"Laura Jiménez","The Diary of a Young Girl",2024-01-28,NULL,NULL
+"Luis Martínez",1984,2024-01-15,2024-01-20,Paid
+"Marta López","Sapiens: A Brief History of Humankind",2024-01-16,NULL,NULL
+"Sofía Torres","A Brief History of Time",2024-01-22,NULL,NULL

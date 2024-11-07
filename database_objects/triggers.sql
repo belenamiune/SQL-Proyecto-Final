@@ -90,7 +90,7 @@ BEFORE UPDATE ON LOAN
 FOR EACH ROW
 BEGIN
     IF NEW.Return_Date < NEW.Loan_Date THEN
-        SIGNAL SQLSTATE '45000' 
+        SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'La fecha de devolución no puede ser anterior a la fecha de préstamo';
     END IF;
 END//
